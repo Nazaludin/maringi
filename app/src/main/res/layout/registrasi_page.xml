@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageButton
+        android:id="@+id/imageButton_back_regis"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="385dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/regis_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="431dp"
+        android:layout_height="535dp"
+        android:layout_marginTop="308dp"
+        android:src="@drawable/bottom_regis_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name_first_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Hai!"
+        android:textColor="@color/white"
+        android:textSize="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView_motto"
+        android:layout_width="369dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="8dp"
+        android:text="Yuk buat akun untuk berdonasi bersama Maringi dan memulai perjalanan untuk menjadi sukarelawan yang hebat"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_first_menu" />
+
+    <EditText
+        android:id="@+id/editTextNama"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:hint="Nama"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+
+        android:ems="10"
+        android:textColor="@color/dark"
+        app:circularflow_defaultRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_motto" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+
+        android:ems="10"
+
+        android:textColor="@color/dark"
+        app:circularflow_defaultRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNama" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+
+        android:textColor="@color/dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+
+    <Button
+        android:id="@+id/button_daftar_regis"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+
+        android:backgroundTint="@color/dark"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="152dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="4dp"
+        android:text="Sudah memiliki akun? Masuk"
+        android:textColor="@color/dark"
+        android:textSize="10dp"
+        android:textAlignment="center"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_masuk" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

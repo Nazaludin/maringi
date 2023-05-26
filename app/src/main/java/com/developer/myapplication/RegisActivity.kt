@@ -9,10 +9,9 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 
 
-class LoginActivity : AppCompatActivity() {
+class RegisActivity : AppCompatActivity() {
     private lateinit var buttonMasuk: Button
     private lateinit var buttonBack: ImageButton
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,16 +20,16 @@ class LoginActivity : AppCompatActivity() {
             supportActionBar!!.hide()
         }
 
-        setContentView(R.layout.login_page)
+        setContentView(R.layout.registrasi_page)
 
-        buttonMasuk = findViewById<Button>(R.id.button_masuk_login)
-        buttonBack = findViewById<ImageButton>(R.id.imageButton_back_login)
+        buttonMasuk = findViewById<Button>(R.id.button_daftar_regis)
+        buttonBack = findViewById<ImageButton>(R.id.imageButton_back_regis)
 
         buttonMasuk.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+            startActivity(Intent(this@RegisActivity, HomeActivity::class.java))
         }
         buttonBack.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, LandingPageActivity::class.java))
+            startActivity(Intent(this@RegisActivity, LandingPageActivity::class.java))
         }
     }
 
