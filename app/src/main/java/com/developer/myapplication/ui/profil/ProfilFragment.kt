@@ -1,4 +1,4 @@
-package com.developer.myapplication.ui.home
+package com.developer.myapplication.ui.profil
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.developer.myapplication.databinding.FragmentHomeBinding
+import com.developer.myapplication.databinding.FragmentProfilBinding
 
-class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+class ProfilFragment : Fragment() {
+
+    private var _binding: FragmentProfilBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +23,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val profilViewModel =
+            ViewModelProvider(this).get(ProfilViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textProfil
+        profilViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

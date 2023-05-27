@@ -1,4 +1,4 @@
-package com.developer.myapplication.ui.dashboard
+package com.developer.myapplication.ui.riwayat
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.developer.myapplication.databinding.FragmentDashboardBinding
+import com.developer.myapplication.databinding.FragmentRiwayatBinding
 
-class DashboardFragment : Fragment() {
+class RiwayatFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentRiwayatBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val niwayatViewModel =
+            ViewModelProvider(this).get(RiwayatViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentRiwayatBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textRiwayat
+        niwayatViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

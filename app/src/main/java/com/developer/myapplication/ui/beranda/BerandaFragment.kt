@@ -1,4 +1,4 @@
-package com.developer.myapplication.ui.setting
+package com.developer.myapplication.ui.beranda
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.developer.myapplication.databinding.FragmentSettingBinding
+import com.developer.myapplication.databinding.FragmentBerandaBinding
 
+class BerandaFragment : Fragment() {
 
-class SettingFragment : Fragment() {
-
-    private var _binding: FragmentSettingBinding? = null
+    private var _binding: FragmentBerandaBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,14 +22,14 @@ class SettingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val settingViewModel =
-            ViewModelProvider(this).get(SettingViewModel::class.java)
+        val berandaViewModel =
+            ViewModelProvider(this).get(BerandaViewModel::class.java)
 
-        _binding = FragmentSettingBinding.inflate(inflater, container, false)
+        _binding = FragmentBerandaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSetting
-        settingViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textBeranda
+        berandaViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
