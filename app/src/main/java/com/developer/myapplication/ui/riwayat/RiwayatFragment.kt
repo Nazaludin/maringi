@@ -22,16 +22,16 @@ class RiwayatFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val niwayatViewModel =
-            ViewModelProvider(this).get(RiwayatViewModel::class.java)
+//        val niwayatViewModel =
+//            ViewModelProvider(this).get(RiwayatViewModel::class.java)
 
         _binding = FragmentRiwayatBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textRiwayat
-        niwayatViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+//        val textView: TextView = binding.textRiwayat
+//        niwayatViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
         return root
     }
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/imageButton_back_cari_lokasi_pengambilan"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/textView_cari_lokasi_pengambilan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Pilh lokasi pengambilan"
+        android:textColor="@color/dark"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editText_cari_lokasi_pengambilan"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/round_edittext_blue"
+        android:drawableStart="@drawable/ic_search_24dp"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:hint="Cari lokasi pengambilan"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+
+        android:textColor="@color/dark"
+        android:textColorHint="@color/white"
+        android:textSize="18dp"
+        app:circularflow_defaultRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_cari_lokasi_pengambilan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

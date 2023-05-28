@@ -6,35 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".ui.profil.ProfilFragment">
 
-    <TextView
-        android:id="@+id/text_profil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:id="@+id/map2"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_height="match_parent"
-        />
-    <Button
-        android:id="@+id/button2_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_setting" />
+        <ImageView
+            android:id="@+id/imageView_akun"
+            android:layout_width="456dp"
+            android:layout_height="208dp"
+            android:padding="@null"
+            android:src="@drawable/top_main_menu_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_akun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Akun"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_bg_detail_akun"
+            android:layout_width="361dp"
+            android:layout_height="138dp"
+            android:layout_marginTop="76dp"
+            android:src="@drawable/detail_profil_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_akun">
+
+        </ImageView>
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/photo_profil_image"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintHorizontal_bias="0.157"
+            app:layout_constraintStart_toStartOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintTop_toTopOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintVertical_bias="0.378"
+            app:shapeAppearanceOverlay="@style/roundedImageViewProfil"
+            app:strokeColor="@color/white"
+            app:strokeWidth="3dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintEnd_toEndOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintStart_toStartOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintTop_toTopOf="@+id/imageView_bg_detail_akun"
+            app:layout_constraintVertical_bias="0.378"
+            >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="14dp"
+                    android:textColor="@color/dark"
+                    android:text="Nama"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_reguler"
+                    android:textSize="14dp"
+                    android:textColor="@color/dark"
+                    android:text="Nomor"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_reguler"
+                    android:textSize="14dp"
+                    android:textColor="@color/dark"
+                    android:text="Email"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_bg_detail_akun">
+
+                <Button
+                    android:id="@+id/button_riwayat_donasi_akun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Riwayat Donasi"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:textSize="14dp"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="12dp"
+                    android:drawableRight="@drawable/ic_next_24dp"
+                    android:backgroundTint="@color/white"
+                    android:background="@drawable/bottom_line" />
+
+                <Button
+                    android:id="@+id/button_pengaturan_akun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_line"
+                    android:backgroundTint="@color/white"
+                    android:drawableRight="@drawable/ic_next_24dp"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:paddingVertical="12dp"
+                    android:paddingLeft="30dp"
+                    android:text="Pengaturan"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/button_keluar_akun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Keluar"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:textSize="14dp"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="12dp"
+                    android:drawableRight="@drawable/ic_next_24dp"
+                    android:backgroundTint="@color/white"
+                    android:background="@drawable/bottom_line" />
+        </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

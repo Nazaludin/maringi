@@ -1,6 +1,7 @@
 package com.developer.myapplication
 
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_beranda, R.id.navigation_donasi, R.id.navigation_riwayat, R.id.navigation_profil
             )
         )
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

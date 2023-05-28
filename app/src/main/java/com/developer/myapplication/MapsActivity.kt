@@ -79,11 +79,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment!!.getMapAsync(this)
 
 
-        buttonLokasi = findViewById<Button>(com.developer.myapplication.R.id.button2_setting)
-        buttonLokasi.setOnClickListener {
-//            startActivity(Intent(this@MapsActivity, HomeActivity::class.java))
-
-        }
+//        buttonLokasi = findViewById<Button>(com.developer.myapplication.R.id.button2_setting)
+//        buttonLokasi.setOnClickListener {
+////            startActivity(Intent(this@MapsActivity, HomeActivity::class.java))
+//
+//        }
     }
 
     /**

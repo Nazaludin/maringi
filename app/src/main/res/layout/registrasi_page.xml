@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Hai!"
+        android:fontFamily="@font/montserrat_black"
         android:textColor="@color/white"
         android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +58,7 @@
         android:layout_marginTop="8dp"
         android:text="Yuk buat akun untuk berdonasi bersama Maringi dan memulai perjalanan untuk menjadi sukarelawan yang hebat"
         android:textAlignment="center"
+        android:fontFamily="@font/montserrat_reguler"
         android:textColor="@color/white"
         android:textSize="14dp"
 
@@ -73,7 +75,13 @@
         android:background="@drawable/round_edittext"
         android:hint="Nama"
         android:inputType="textPersonName"
-        android:paddingLeft="20dp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_profil_24dp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textColorHint="@color/primary_blue"
+        android:drawableTint="@color/primary_blue"
+
 
         android:ems="10"
         android:textColor="@color/dark"
@@ -91,7 +99,12 @@
         android:background="@drawable/round_edittext"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:paddingLeft="20dp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_email_24dp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textColorHint="@color/primary_blue"
+        android:drawableTint="@color/primary_blue"
 
         android:ems="10"
 
@@ -111,7 +124,14 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:paddingLeft="20dp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_password_24dp"
+        android:textColorHint="@color/primary_blue"
+        android:drawableTint="@color/primary_blue"
+        app:passwordToggleEnabled="true"
+        android:fontFamily="@font/montserrat_semi_bold"
+        app:endIconMode="password_toggle"
 
         android:textColor="@color/dark"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,6 +164,7 @@
         android:textColor="@color/dark"
         android:textSize="10dp"
         android:textAlignment="center"
+        android:textColorHint="@color/primary_blue"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

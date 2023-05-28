@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -49,7 +48,7 @@ class RegisActivity : AppCompatActivity() {
                     //your response
                     Toast.makeText(applicationContext, textNama.text.toString(), Toast.LENGTH_SHORT).show()
                     // Activity
-                    startActivity(Intent(this@RegisActivity, HomeActivity::class.java))
+                    startActivity(Intent(this@RegisActivity, MainMenuActivity::class.java))
                 },
                 Response.ErrorListener { error ->
                     //your error

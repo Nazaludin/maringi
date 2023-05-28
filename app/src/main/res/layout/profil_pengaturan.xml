@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_profil_pengaturan"
+        android:layout_width="376dp"
+        android:layout_height="211dp"
+        android:layout_marginBottom="524dp"
+        android:padding="@null"
+        android:src="@drawable/top_main_menu_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/photo_profil_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_profil_pengaturan"
+        app:shapeAppearanceOverlay="@style/roundedImageViewProfil"
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton_back_profil_pengaturan"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/white" />
+
+
+    <TextView
+        android:id="@+id/textView_profil_pengaturan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Pengaturan"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_nama_profil_pengaturan"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/round_edittext"
+        android:drawableStart="@drawable/ic_profil_24dp"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/primary_blue"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:hint="Nama"
+        android:inputType="textPersonName"
+
+
+        android:paddingLeft="10dp"
+        android:textColor="@color/dark"
+        android:textColorHint="@color/primary_blue"
+        app:circularflow_defaultRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_profil_pengaturan" />
+
+    <EditText
+        android:id="@+id/editText_email_profil_pengaturan"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_email_24dp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textColorHint="@color/primary_blue"
+        android:drawableTint="@color/primary_blue"
+
+        android:ems="10"
+
+        android:textColor="@color/dark"
+        app:circularflow_defaultRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_nama_profil_pengaturan" />
+
+    <EditText
+        android:id="@+id/editText_password_profil_pengaturan"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_password_24dp"
+        android:textColorHint="@color/primary_blue"
+        android:drawableTint="@color/primary_blue"
+        app:passwordToggleEnabled="true"
+        android:fontFamily="@font/montserrat_semi_bold"
+        app:endIconMode="password_toggle"
+
+        android:textColor="@color/dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email_profil_pengaturan" />
+
+    <EditText
+        android:id="@+id/editText_telepon_profil_pengaturan"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:ems="10"
+        android:hint="Nomor Telepon"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_phone_24dp"
+        android:textColorHint="@color/primary_blue"
+        android:drawableTint="@color/primary_blue"
+        app:passwordToggleEnabled="true"
+        android:fontFamily="@font/montserrat_semi_bold"
+        app:endIconMode="password_toggle"
+
+        android:textColor="@color/dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_profil_pengaturan" />
+
+    <Button
+        android:id="@+id/button_simpan_profil_pengaturan"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+
+        android:backgroundTint="@color/primary_blue"
+        android:text="Simpan"
+        android:textAllCaps="false"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_telepon_profil_pengaturan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

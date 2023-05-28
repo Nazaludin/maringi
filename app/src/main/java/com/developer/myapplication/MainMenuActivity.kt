@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.developer.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeActivity:AppCompatActivity() {
+class MainMenuActivity:AppCompatActivity() {
         private lateinit var binding: ActivityMainBinding
 
         override fun onCreate(savedInstanceState: Bundle?) {

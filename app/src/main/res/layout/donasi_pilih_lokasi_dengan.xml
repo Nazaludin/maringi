@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/imageButton_back_pilih_lokasi_dengan"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/textView_pilih_lokasi_dengan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Pilh lokasi pengambilan"
+        android:textColor="@color/dark"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_donasi_pilih_lokasi_dengan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/pilih_lokasi_menu_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_pilih_lokasi_dengan" />
+
+
+    <Button
+        android:id="@+id/button_cari_lokasi_pengambilan"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/primary_blue"
+        android:text="Cari lokasi pengambilan"
+        android:textAllCaps="false"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_donasi_pilih_lokasi_dengan" />
+
+    <Button
+        android:id="@+id/button_pilih_lewat_peta"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+
+        android:backgroundTint="@color/primary_blue"
+        android:text="Pilih lewat peta"
+        android:textAllCaps="false"
+        android:textSize="12dp"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_cari_lokasi_pengambilan" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
