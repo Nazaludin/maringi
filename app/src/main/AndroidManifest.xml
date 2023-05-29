@@ -19,10 +19,9 @@
         android:theme="@style/Theme.Maringi"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".LandingPageActivity"
             android:exported="true"
             android:usesCleartextTraffic="true"
-
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +31,9 @@
         </activity>
         <activity android:name=".RegisActivity" />
         <activity android:name=".LoginActivity"/>
-<!--        <activity android:name=".MainMenuActivity"/>-->
+        <activity android:name=".MainMenuActivity"/>
         <activity android:name=".MapsActivity"/>
+        <activity android:name=".AkunPengaturanActivity"/>
         <activity android:name=".MenuLokasiPengambilanActivity"/>
 
         <uses-library

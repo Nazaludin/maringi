@@ -1,11 +1,15 @@
 package com.developer.myapplication.ui.profil
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -18,6 +22,8 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.developer.myapplication.AkunPengaturanActivity
+import com.developer.myapplication.LandingPageActivity
 import com.developer.myapplication.MenuLokasiPengambilanActivity
 import com.developer.myapplication.R
 import com.developer.myapplication.databinding.ActivityMainBinding
@@ -33,6 +39,14 @@ class ProfilFragment : Fragment() {
     private lateinit var buttonRiwayat:Button
     private lateinit var buttonPengaturan:Button
     private lateinit var buttonKeluar:Button
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+    private lateinit var textNamaAkun: TextView
+    private lateinit var textEmailAkun: TextView
+    private lateinit var textNomorAkun: TextView
+
+
+
 
 
     // This property is only valid between onCreateView and
@@ -72,10 +86,43 @@ class ProfilFragment : Fragment() {
         buttonRiwayat= this.requireView().findViewById<Button>(R.id.button_riwayat_donasi_akun);
         buttonPengaturan= this.requireView().findViewById<Button>(R.id.button_pengaturan_akun);
         buttonKeluar= this.requireView().findViewById<Button>(R.id.button_keluar_akun);
+        textNamaAkun=this.requireView().findViewById<TextView>(R.id.TextView_nama_akun_detail);
+        textNomorAkun=this.requireView().findViewById<TextView>(R.id.TextView_nomor_akun_detail);
+        textEmailAkun=this.requireView().findViewById<TextView>(R.id.TextView_email_akun_detail);
+
+        requireActivity().run {
+            sharedPreferences = this.applicationContext.getSharedPreferences("session-data", MODE_PRIVATE)
+            editor = sharedPreferences.edit()
+        }
+
+        if(sharedPreferences.getString("nama", null)!=null){
+            this.textNamaAkun.setText(sharedPreferences.getString("nama", null))
+        }
+        if(sharedPreferences.getString("email", null)!=null){
+            this.textEmailAkun.setText(sharedPreferences.getString("email", null))
+        }
+        if(sharedPreferences.getString("nomor", null)!=null){
+            this.textNomorAkun.setText(sharedPreferences.getString("nomor", null))
+        }
+
 
         buttonRiwayat.setOnClickListener {
             requireActivity().run {
                 startActivity(Intent(this, RiwayatFragment::class.java))
+                finish()
+            }
+        }
+        buttonPengaturan.setOnClickListener {
+            requireActivity().run {
+                startActivity(Intent(this, AkunPengaturanActivity::class.java))
+                finish()
+            }
+        }
+        buttonKeluar.setOnClickListener {
+            requireActivity().run {
+                editor.clear().apply()
+                Toast.makeText(applicationContext, "Logout Berhasil", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, LandingPageActivity::class.java))
                 finish()
             }
         }

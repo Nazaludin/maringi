@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/app_name_first_menu" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editText_email_login"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_motto" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editText_password_login"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_email_login" />
 
     <CheckedTextView
         android:id="@+id/checkedTextView"
@@ -125,7 +125,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_login" />
 
     <Button
         android:id="@+id/button_masuk_login"
@@ -140,12 +140,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_login" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="152dp"
-        android:layout_height="17dp"
+        android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:text="Belum memiliki akun? Daftar"
         android:textColor="@color/dark"
@@ -154,7 +154,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_masuk" />
+        app:layout_constraintTop_toBottomOf="@+id/button_masuk_login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

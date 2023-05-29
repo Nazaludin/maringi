@@ -22,16 +22,16 @@ class BerandaFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val berandaViewModel =
-            ViewModelProvider(this).get(BerandaViewModel::class.java)
+//        val berandaViewModel =
+//            ViewModelProvider(this).get(BerandaViewModel::class.java)
 
         _binding = FragmentBerandaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textBeranda
-        berandaViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+//        berandaViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
         return root
     }
 

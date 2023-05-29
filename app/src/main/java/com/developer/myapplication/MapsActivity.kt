@@ -63,7 +63,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         // Set the layout file as the content view.
-        setContentView(com.developer.myapplication.R.layout.fragment_profil)
+        setContentView(com.developer.myapplication.R.layout.activity_maps)
 
 
 
@@ -75,7 +75,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
         // Get a handle to the fragment and register the callback.
-        val mapFragment = supportFragmentManager.findFragmentById(com.developer.myapplication.R.id.map2) as SupportMapFragment?
+        val mapFragment = supportFragmentManager.findFragmentById(com.developer.myapplication.R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
 
