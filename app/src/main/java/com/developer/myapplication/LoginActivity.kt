@@ -36,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         setContentView(R.layout.login_page)
+
+
         textEmail = findViewById<EditText>(R.id.editText_email_login)
         textPassword = findViewById<EditText>(R.id.editText_password_login)
 

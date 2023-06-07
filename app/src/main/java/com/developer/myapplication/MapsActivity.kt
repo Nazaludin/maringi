@@ -3,17 +3,26 @@ package com.developer.myapplication
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Bundle
 import android.location.Location
+import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
+import android.widget.EditText
+import android.widget.FrameLayout
+import android.widget.ListAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -21,16 +30,26 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.AutocompletePrediction
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken
 import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.api.model.TypeFilter
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
 import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest
 import com.google.android.libraries.places.api.net.PlacesClient
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
+
 
 // Implement OnMapReadyCallback.
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var buttonLokasi: Button
     private var map: GoogleMap? = null
     private var cameraPosition: CameraPosition? = null
+    private lateinit var textSearch : AutoCompleteTextView
 
+    private var predictionList: List<AutocompletePrediction>? = null
     // The entry point to the Places API.
     private lateinit var placesClient: PlacesClient
 
@@ -49,12 +68,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var likelyPlaceAddresses: Array<String?> = arrayOfNulls(0)
     private var likelyPlaceAttributions: Array<List<*>?> = arrayOfNulls(0)
     private var likelyPlaceLatLngs: Array<LatLng?> = arrayOfNulls(0)
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<FrameLayout>
+    private lateinit var buttonPilih: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }
+
+
 
         // Retrieve location and camera position from saved instance state.
         if (savedInstanceState != null) {
@@ -63,21 +87,84 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         // Set the layout file as the content view.
-        setContentView(com.developer.myapplication.R.layout.activity_maps)
+        setContentView(R.layout.activity_maps)
 
 
 
-//        // Construct a PlacesClient
-//        Places.initialize(applicationContext, BuildConfig.MAPS_API_KEY)
-//        placesClient = Places.createClient(this)
 
-        // Construct a FusedLocationProviderClient.
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
+
 
         // Get a handle to the fragment and register the callback.
         val mapFragment = supportFragmentManager.findFragmentById(com.developer.myapplication.R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
+        // Construct a FusedLocationProviderClient.
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
+        // Construct a PlacesClient
+        Places.initialize(this, "AIzaSyB5lQ1QAOl2pWJxtL4iCfMRyFj2XygOpTo")
+        placesClient = Places.createClient(this)
+        val token = AutocompleteSessionToken.newInstance()
+
+        textSearch = findViewById<AutoCompleteTextView>(R.id.autoText_cari_lokasi_map)
+
+        textSearch.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                val view: View = layoutInflater.inflate(R.layout.bottom_sheet, null)
+                val dialog = BottomSheetDialog(this@MapsActivity)
+                dialog.setContentView(view)
+                dialog.show()
+
+                buttonPilih = view.findViewById<Button>(R.id.button_pilih_lokasi)
+                buttonPilih.setOnClickListener(object : View.OnClickListener {
+                    override fun onClick(view: View?) {
+                        startActivity(Intent(this@MapsActivity, LoaderDriverActivity    ::class.java))
+                    }
+                });
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                val predictionsRequest = FindAutocompletePredictionsRequest.builder()
+                    .setTypeFilter(TypeFilter.ADDRESS)
+                    .setCountry("ID")
+                    .setSessionToken(token)
+                    .setQuery(s.toString())
+                    .build()
+                Log.e("requestpredict", predictionsRequest.toString())
+
+                placesClient.findAutocompletePredictions(predictionsRequest)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val predictionsResponse = task.result
+                            Log.e("prediction", predictionsRequest.toString())
+
+                            Log.e("prediction", predictionsResponse.toString())
+                            if (predictionsResponse != null) {
+                                predictionList = predictionsResponse.autocompletePredictions
+                                val suggestionsList: MutableList<String> =
+                                    ArrayList()
+                                for (i in 0 until (predictionList as MutableList<AutocompletePrediction>).size) {
+                                    val prediction: AutocompletePrediction = (predictionList as MutableList<AutocompletePrediction>).get(i)
+                                    suggestionsList.add(prediction.getFullText(null).toString())
+                                }
+//                                textSearch.up(suggestionsList)
+////                                if (!materialSearchBar.isSuggestionsVisible()) {
+////                                    materialSearchBar.showSuggestionsList()
+////                                }
+Log.e("prediction", suggestionsList.toString())
+//                                val adapter= ArrayAdapter (this, android.R.layout.simple_list_item_1, suggestionsList)
+//                                textSearch.setAdapter(adapter)
+                            }
+
+
+                        } else {
+                            Log.i("mytag", "prediction fetching task unsuccessful")
+                        }
+                    }
+            }
+        })
 
 //        buttonLokasi = findViewById<Button>(com.developer.myapplication.R.id.button2_setting)
 //        buttonLokasi.setOnClickListener {

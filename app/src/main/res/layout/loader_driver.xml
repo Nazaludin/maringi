@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ImageView_loader_driver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/loading_driver_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar_loader_driver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        app:indicatorColor="@color/primary_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageView_loader_driver"
+        app:layout_constraintVertical_bias="0.569"
+        app:trackColor="@color/quantum_grey400"
+        app:trackCornerRadius="40dp"
+        app:trackThickness="15dp" />
+
+    <TextView
+        android:id="@+id/textView_message_loader_driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Mohon tunggu sebentar.."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar_loader_driver" />
+
+    <TextView
+        android:id="@+id/textView_message_detail_loader_driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_reguler"
+        android:text="kami sedang mencari driver untuk Anda"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_message_loader_driver" />
+
+    <Button
+        android:id="@+id/button_riwayat_donasi_akun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Batalkan Pesanan"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textSize="14dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary_blue"
+        android:paddingLeft="30dp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_message_detail_loader_driver"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

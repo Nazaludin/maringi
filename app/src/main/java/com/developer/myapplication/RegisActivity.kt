@@ -1,6 +1,7 @@
 package com.developer.myapplication
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -19,6 +20,9 @@ class RegisActivity : AppCompatActivity() {
     private lateinit var textNama :EditText;
     private lateinit var textEmail :EditText;
     private lateinit var textPassword :EditText;
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +39,12 @@ class RegisActivity : AppCompatActivity() {
         textEmail = findViewById<EditText>(R.id.editTextEmailAddress)
         textPassword = findViewById<EditText>(R.id.editTextPassword)
 
+        sharedPreferences = getSharedPreferences("session-data", MODE_PRIVATE)
+        editor= sharedPreferences.edit();
+        editor.putString("email", textEmail.text.toString())
+        editor.putString("nama", textNama.text.toString())
+        editor.putBoolean("is_login", true)
+        editor.apply()
         buttonMasuk.setOnClickListener {
 
             // Instantiate the RequestQueue.
@@ -48,7 +58,7 @@ class RegisActivity : AppCompatActivity() {
                     //your response
                     Toast.makeText(applicationContext, textNama.text.toString(), Toast.LENGTH_SHORT).show()
                     // Activity
-                    startActivity(Intent(this@RegisActivity, MainMenuActivity::class.java))
+                    startActivity(Intent(this@RegisActivity, LoginActivity::class.java))
                 },
                 Response.ErrorListener { error ->
                     //your error
